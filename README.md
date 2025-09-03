@@ -10,7 +10,7 @@
 |------|------|
 | `app.py` | 主程式（包含 DB 初始化、migration、指令解析、CSV 匯出） |
 | `requirements.txt` | Python 套件需求清單 |
-| `.env` | 環境變數檔案（**不應上傳到 GitHub**） |
+| `.env` | 環境變數檔案 |
 | `bookkeeping.db` | SQLite 資料庫（程式啟動時自動建立與更新） |
 | `records.csv` | 匯出用 CSV 檔（由 `儲存` 指令建立/覆蓋） |
 
