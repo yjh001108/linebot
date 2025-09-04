@@ -59,7 +59,9 @@ ngrok config add-authtoken <你的Authtoken>
    * Channel Secret
    * Channel Access Token（點選「發行」）
 
-<img src="https://github.com/user-attachments/assets/5ca4b91f-3f17-417e-ad12-0da55e2f2018" alt="LINE Developers Channel 設定畫面" width="500" />
+<img src="https://github.com/user-attachments/assets/2f0a364a-d8e2-45e0-8498-3c3de23cef05" alt="LINE Developers Channel 設定畫面" width="500" />
+<img src="https://github.com/user-attachments/assets/c83269e3-a574-4746-956b-283f0270fe91" alt="LINE Developers Channel 設定畫面" width="500" />
+
 
 ---
 
