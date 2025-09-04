@@ -21,6 +21,7 @@
 ### 1. 安裝 Python 3.8+
 - 前往 [Python 官網下載頁面](https://www.python.org/downloads/)，下載 **Python 3.8 或以上版本**。
 - 安裝時請勾選 **「Add Python to PATH」**。
+<img width="810" height="498" alt="image" src="https://github.com/user-attachments/assets/1e0dc982-9ea5-4255-9dc7-4fe8160b09b3" />
 
 
 ### 2. 安裝 ngrok 並設定 Authtoken
