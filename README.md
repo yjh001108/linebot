@@ -22,6 +22,7 @@
 - 前往 [Python 官網下載頁面](https://www.python.org/downloads/)，下載 **Python 3.8 或以上版本**。
 - 安裝時請勾選 **「Add Python to PATH」**。
 <img width="810" height="498" alt="image" src="https://github.com/user-attachments/assets/1e0dc982-9ea5-4255-9dc7-4fe8160b09b3" />
+<img src="https://github.com/user-attachments/assets/1e0dc982-9ea5-4255-9dc7-4fe8160b09b3" alt="Python 安裝畫面" width="500"/>
 
 
 ### 2. 安裝 ngrok 並設定 Authtoken
@@ -142,7 +143,7 @@ ngrok http 5000
 
 | 指令              | 說明                  |
 | --------------- | ------------------- |
-| `品項 種類 價錢 [備註]` | 新增一筆記帳資料（會自動加上今天日期），(範例：`午餐 食物 120 跟朋友`)  |
+| `品項 種類 價錢 備註` | 新增一筆記帳資料（會自動加上今天日期），(範例：`午餐 食物 120 跟朋友`)  |
 | `清單`            | 顯示最近 10 筆紀錄         |
 | `0902`          | 顯示 9 月 2 號的紀錄       |
 | `今日`            | 顯示今天所有紀錄            |
