@@ -21,7 +21,7 @@
 ### 1. 安裝 Python 3.8+
 - 前往 [Python 官網下載頁面](https://www.python.org/downloads/)，下載 **Python 3.8 或以上版本**。
 - 安裝時請勾選 **「Add Python to PATH」**。
-<img src="https://github.com/user-attachments/assets/1e0dc982-9ea5-4255-9dc7-4fe8160b09b3" alt="Python 安裝畫面" width="500"/>
+<img src="https://github.com/user-attachments/assets/1e0dc982-9ea5-4255-9dc7-4fe8160b09b3" alt="Python 安裝畫面" width="700"/>
 
 
 ### 2. 安裝 ngrok 並設定 Authtoken
@@ -37,22 +37,18 @@
 ### 3. 建立 LINE Messaging API Channel
 
 1. 前往 [LINE Developers](https://developers.line.biz/)。
-
 2. 使用 LINE 帳號登入。
-
 3. 建立一個 **Provider**（提供者，隨便填寫一個名稱即可）。
-
 4. 在該 Provider 下，建立 **Messaging API Channel**。
-
    * App 名稱：隨意（例如「記帳小幫手」）
    * App Icon：可上傳隨便一張圖
    * 類型：Messaging API
    * Email：填寫有效 Email
-
 5. 建立完成後，進入 Channel 頁面 → 複製：
-
    * **Channel Secret**
    * **Channel Access Token**（點選「發行」）
+
+<img src="https://github.com/user-attachments/assets/5ca4b91f-3f17-417e-ad12-0da55e2f2018" alt="Python 安裝畫面" width="700"/>
 
 ---
 
