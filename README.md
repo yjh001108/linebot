@@ -21,7 +21,6 @@
 ### 1. 安裝 Python 3.8+
 - 前往 [Python 官網下載頁面](https://www.python.org/downloads/)，下載 **Python 3.8 或以上版本**。
 - 安裝時請勾選 **「Add Python to PATH」**。
-<img width="810" height="498" alt="image" src="https://github.com/user-attachments/assets/1e0dc982-9ea5-4255-9dc7-4fe8160b09b3" />
 <img src="https://github.com/user-attachments/assets/1e0dc982-9ea5-4255-9dc7-4fe8160b09b3" alt="Python 安裝畫面" width="500"/>
 
 
@@ -33,6 +32,7 @@
    ```powershell
    ngrok config add-authtoken <你的Authtoken>
 ````
+<img src="https://github.com/user-attachments/assets/faf6eed6-793b-4027-b044-1b2c48aef79a" alt="Python 安裝畫面" width="500"/>
 
 
 ### 3. 建立 LINE Messaging API Channel
