@@ -1,3 +1,62 @@
+## ⚙️ 二、前置作業（一次性）
+
+### 1. 安裝 Python 3.8+
+- 前往 [Python 官網下載頁面](https://www.python.org/downloads/)，下載 **Python 3.8 或以上版本**。
+- 安裝時請勾選 **「Add Python to PATH」**。
+
+📷 *建議附圖：Python 官網下載頁*
+
+---
+
+### 2. 安裝 ngrok 並設定 Authtoken
+1. 前往 [ngrok 官網](https://ngrok.com/)，註冊一個免費帳號（可用 Google/LINE/GitHub 登入）。
+2. 下載並安裝 ngrok。
+3. 登入 ngrok 官網 → 點選 Dashboard → 複製你的 **Authtoken**。
+4. 在 PowerShell 輸入以下指令來設定：
+   ```powershell
+   ngrok config add-authtoken <你的Authtoken>
+````
+
+📷 *建議附圖：ngrok Authtoken 頁面、PowerShell 設定示意圖*
+
+---
+
+### 3. 建立 LINE Messaging API Channel
+
+1. 前往 [LINE Developers](https://developers.line.biz/)。
+
+2. 使用 LINE 帳號登入。
+
+3. 建立一個 **Provider**（提供者，隨便填寫一個名稱即可）。
+
+4. 在該 Provider 下，建立 **Messaging API Channel**。
+
+   * App 名稱：隨意（例如「記帳小幫手」）
+   * App Icon：可上傳隨便一張圖
+   * 類型：Messaging API
+   * Email：填寫有效 Email
+
+5. 建立完成後，進入 Channel 頁面 → 複製：
+
+   * **Channel Secret**
+   * **Channel Access Token**（點選「發行」）
+
+📷 *建議附圖：LINE Developers 建立 Channel 頁面、取得 Channel Secret/Access Token 頁面*
+
+
+  ```
+
+* 點擊「**Verify**」驗證 Webhook，若顯示成功，表示 LINE 已能正確呼叫你的伺服器。
+
+📷 *建議附圖：ngrok 執行畫面、LINE Webhook 設定頁面*
+
+
+
+
+
+
+
+
 # LINE Bot 記帳 — 建立教學（Windows / PowerShell）
 
 > 🎯 **目標**：建立一個簡單方便的 LINE Bot 記帳工具，支援 Excel 即時匯出 ，適合初學者快速上手。
@@ -18,11 +77,40 @@
 
 ## ⚙️ 二、前置作業（一次性）
 
-1. 安裝 **Python 3.8+**（[Python 官網](https://www.python.org/)）。
-2. 安裝 **ngrok** 並註冊帳號（[ngrok 官網](https://ngrok.com/)）。
-3. 前往 [LINE Developers](https://developers.line.biz/) 建立 **Messaging API Channel**，取得：
-   - Channel Secret
-   - Channel Access Token
+### 1. 安裝 Python 3.8+
+- 前往 [Python 官網下載頁面](https://www.python.org/downloads/)，下載 **Python 3.8 或以上版本**。
+- 安裝時請勾選 **「Add Python to PATH」**。
+
+
+### 2. 安裝 ngrok 並設定 Authtoken
+1. 前往 [ngrok 官網](https://ngrok.com/)，註冊一個免費帳號。
+2. 下載並安裝 ngrok。
+3. 登入 ngrok 官網 → 點選 Dashboard → 複製你的 **Authtoken**。
+4. 在 PowerShell 輸入以下指令來設定：
+   ```powershell
+   ngrok config add-authtoken <你的Authtoken>
+````
+
+
+### 3. 建立 LINE Messaging API Channel
+
+1. 前往 [LINE Developers](https://developers.line.biz/)。
+
+2. 使用 LINE 帳號登入。
+
+3. 建立一個 **Provider**（提供者，隨便填寫一個名稱即可）。
+
+4. 在該 Provider 下，建立 **Messaging API Channel**。
+
+   * App 名稱：隨意（例如「記帳小幫手」）
+   * App Icon：可上傳隨便一張圖
+   * 類型：Messaging API
+   * Email：填寫有效 Email
+
+5. 建立完成後，進入 Channel 頁面 → 複製：
+
+   * **Channel Secret**
+   * **Channel Access Token**（點選「發行」）
 
 ---
 
