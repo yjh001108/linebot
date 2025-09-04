@@ -1,6 +1,6 @@
-# LINE Bot 記帳 — 建立教學（Windows 11 / PowerShell）
+# LINE Bot 記帳 — 建立教學（Windows / PowerShell）
 
-> 🎯 **目標**：建立一個簡單方便的 LINE Bot 記帳工具，支援 Excel 即時匯出 `records.csv`，適合初學者快速上手。
+> 🎯 **目標**：建立一個簡單方便的 LINE Bot 記帳工具，支援 Excel 即時匯出 ，適合初學者快速上手。
 
 ---
 
