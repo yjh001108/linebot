@@ -198,17 +198,6 @@ ngrok http 5000
 
 
 
-當然可以！以下是我特別整理的 Markdown 版本，會更確保圖片能正確顯示。重點在於：
-
-* 使用相對或絕對可靠的圖片路徑／網址
-* 避免出錯的 **重複反引號** 或搞錯的 Markdown 語法
-* 清楚、工整的標題與段落格式
-
-你可以直接複製貼上使用。如果有特定需求（如想使用本地圖片或變更尺寸），也可以告訴我，我再幫你調整。
-
----
-
-````markdown
 # LINE Bot 記帳 — 建立教學（Windows / PowerShell）
 
 > 🎯 **目標**：建立一個簡單方便的 LINE Bot 記帳工具，支援 Excel 即時匯出，適合初學者快速上手。
@@ -234,9 +223,7 @@ ngrok http 5000
 - 前往 [Python 官網下載頁面](https://www.python.org/downloads/)，下載 **Python 3.8 或以上版本**。
 - 安裝時請勾選 **「Add Python to PATH」**。
 
-```markdown
 <img src="https://github.com/user-attachments/assets/1e0dc982-9ea5-4255-9dc7-4fe8160b09b3" alt="Python 安裝畫面" width="500" />
-````
 
 ---
 
@@ -251,10 +238,8 @@ ngrok http 5000
 ngrok config add-authtoken <你的Authtoken>
 ```
 
-```markdown
 <img src="https://github.com/user-attachments/assets/18be64f9-59fd-4b25-bf72-50646adc4da1" alt="ngrok Authtoken 設定" width="500" />
 <img src="https://github.com/user-attachments/assets/e3ccc1cc-b4cd-4a74-8954-b20ebc209ad2" alt="ngrok Authtoken 完成" width="500" />
-```
 
 ---
 
@@ -274,9 +259,7 @@ ngrok config add-authtoken <你的Authtoken>
    * **Channel Secret**
    * **Channel Access Token**（點選「發行」）
 
-```markdown
 <img src="https://github.com/user-attachments/assets/5ca4b91f-3f17-417e-ad12-0da55e2f2018" alt="LINE Developers Channel 設定畫面" width="500" />
-```
 
 ---
 
@@ -341,9 +324,7 @@ ngrok http 5000
   https://xxxx.ngrok-free.app
   ```
 
-```markdown
 <img src="https://github.com/user-attachments/assets/40aa0e60-bfd6-401d-92fc-208ddc0976f1" alt="ngrok Forwarding URL" width="500" />
-```
 
 * 前往 LINE Developers → Channel → **Webhook settings**，貼上：
 
@@ -354,19 +335,15 @@ ngrok http 5000
   * URL 結尾需加上 `/callback`
   * 點擊「**Verify**」驗證 Webhook，若成功表示 LINE 可正確呼叫你的伺服器。
 
-```markdown
 <img src="https://github.com/user-attachments/assets/66d820a5-1ce1-4254-8377-70d1bc40968a" alt="Webhook settings 畫面" width="500" />
 <img src="https://github.com/user-attachments/assets/6d35d74e-a4a7-4100-80ca-9e5a36e30f47" alt="Webhook 驗證成功畫面" width="500" />
-```
 
 ---
 
 ## ✅ 安裝成功後畫面
 
-```markdown
 <img src="https://github.com/user-attachments/assets/8fcd3147-3892-46a6-8176-8926f62f503e" alt="安裝成功畫面 1" width="200" />
 <img src="https://github.com/user-attachments/assets/6630a375-d135-4f10-a4c2-68f0d4871660" alt="安裝成功畫面 2" width="500" />
-```
 
 ---
 
@@ -418,5 +395,3 @@ ngrok http 5000
 | 匯出的 `records.csv` 為空                                 | 代表資料庫尚無資料，可先輸入一筆記帳指令測試。                            |
 | 出現錯誤 `table records has no column named record_date` | 使用新版 `app.py` 會自動處理 migration，無需手動刪除資料庫。           |
 
-
-````
