@@ -32,6 +32,8 @@
    ```powershell
    ngrok config add-authtoken <你的Authtoken>
 ````
+<img width="1878" height="868" alt="image" src="https://github.com/user-attachments/assets/1808adb2-2ede-4026-ae03-ed7ac19ed4d2" />
+
 
 
 ### 3. 建立 LINE Messaging API Channel
