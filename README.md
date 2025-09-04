@@ -198,9 +198,6 @@ ngrok http 5000
 
 
 
-以下是修正排版、標點與 Markdown 語法一致性的版本，你可以 **直接複製貼上使用**：
-
-````markdown
 # LINE Bot 記帳 — 建立教學（Windows / PowerShell）
 
 > 🎯 **目標**：建立一個簡單方便的 LINE Bot 記帳工具，支援 Excel 即時匯出，適合初學者快速上手。
@@ -346,7 +343,7 @@ ngrok http 5000
 
 ## ✅ 安裝成功畫面
 
-<img src="https://github.com/user-attachments/assets/8fcd3147-3892-46a6-8176-8926f62f503e" alt="完成畫面 1" width="500"/>
+<img src="https://github.com/user-attachments/assets/8fcd3147-3892-46a6-8176-8926f62f503e" alt="完成畫面 1" width="200"/>
 <img src="https://github.com/user-attachments/assets/6630a375-d135-4f10-a4c2-68f0d4871660" alt="完成畫面 2" width="500"/>
 
 ---
