@@ -418,6 +418,5 @@ ngrok http 5000
 | 匯出的 `records.csv` 為空                                 | 代表資料庫尚無資料，可先輸入一筆記帳指令測試。                            |
 | 出現錯誤 `table records has no column named record_date` | 使用新版 `app.py` 會自動處理 migration，無需手動刪除資料庫。           |
 
----
 
 ````
