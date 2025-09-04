@@ -21,7 +21,7 @@
 ### 1. 安裝 Python 3.8+
 - 前往 [Python 官網下載頁面](https://www.python.org/downloads/)，下載 **Python 3.8 或以上版本**。
 - 安裝時請勾選 **「Add Python to PATH」**。
-<img src="https://github.com/user-attachments/assets/1e0dc982-9ea5-4255-9dc7-4fe8160b09b3" alt="Python 安裝畫面" width="700"/>
+<img src="https://github.com/user-attachments/assets/1e0dc982-9ea5-4255-9dc7-4fe8160b09b3" alt="Python 安裝畫面" width="500"/>
 
 
 ### 2. 安裝 ngrok 並設定 Authtoken
@@ -32,6 +32,8 @@
    ```powershell
    ngrok config add-authtoken <你的Authtoken>
 ````
+<img src="https://github.com/user-attachments/assets/18be64f9-59fd-4b25-bf72-50646adc4da1" alt="Python 安裝畫面" width="500"/>
+<img src="https://github.com/user-attachments/assets/e3ccc1cc-b4cd-4a74-8954-b20ebc209ad2" alt="Python 安裝畫面" width="500"/>
 
 
 ### 3. 建立 LINE Messaging API Channel
@@ -48,7 +50,7 @@
    * **Channel Secret**
    * **Channel Access Token**（點選「發行」）
 
-<img src="https://github.com/user-attachments/assets/5ca4b91f-3f17-417e-ad12-0da55e2f2018" alt="Python 安裝畫面" width="700"/>
+<img src="https://github.com/user-attachments/assets/5ca4b91f-3f17-417e-ad12-0da55e2f2018" alt="Python 安裝畫面" width="500"/>
 
 ---
 
@@ -114,6 +116,7 @@ ngrok http 5000
   ```
   https://xxxx.ngrok-free.app
   ```
+<img src="https://github.com/user-attachments/assets/40aa0e60-bfd6-401d-92fc-208ddc0976f1" alt="Python 安裝畫面" width="500"/>
 
 * 前往 LINE Developers > Channel > **Webhook settings**，貼上：
 
@@ -124,9 +127,13 @@ ngrok http 5000
 * 結尾需加 `/callback`
 * 點擊「**Verify**」驗證 Webhook，若顯示成功，表示 LINE 已能正確呼叫你的伺服器。
 
-## 安裝成功
-<img width="870" height="1514" alt="image" src="https://github.com/user-attachments/assets/f1acbc55-82ba-498c-a6d5-631a959358b8" />
+<img src="https://github.com/user-attachments/assets/66d820a5-1ce1-4254-8377-70d1bc40968a" alt="Python 安裝畫面" width="500"/>
+<img src="https://github.com/user-attachments/assets/6d35d74e-a4a7-4100-80ca-9e5a36e30f47" alt="Python 安裝畫面" width="500"/>
 
+
+## 安裝成功
+<img src="https://github.com/user-attachments/assets/8fcd3147-3892-46a6-8176-8926f62f503e" alt="Python 安裝畫面" width="500"/>
+<img src="https://github.com/user-attachments/assets/6630a375-d135-4f10-a4c2-68f0d4871660" alt="Python 安裝畫面" width="500"/>
 
 ---
 
