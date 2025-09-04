@@ -343,7 +343,6 @@ ngrok http 5000
 ## ✅ 安裝成功後畫面
 
 <img src="https://github.com/user-attachments/assets/8fcd3147-3892-46a6-8176-8926f62f503e" alt="安裝成功畫面 1" width="200" />
-<img src="https://github.com/user-attachments/assets/6630a375-d135-4f10-a4c2-68f0d4871660" alt="安裝成功畫面 2" width="500" />
 
 ---
 
@@ -363,6 +362,7 @@ ngrok http 5000
 | `儲存`          | 更新 `records.csv` 檔案（可用 Excel 開啟瀏覽）    |
 
 2. 開啟 `records.csv`（用 Excel 查看），即可看到所有記錄。
+<img src="https://github.com/user-attachments/assets/6630a375-d135-4f10-a4c2-68f0d4871660" alt="安裝成功畫面 2" width="500" />
 
 ---
 
