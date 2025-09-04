@@ -126,7 +126,7 @@ ngrok http 5000
   https://xxxx.ngrok-free.app
   ```
 
-<img src="https://github.com/user-attachments/assets/40aa0e60-bfd6-401d-92fc-208ddc0976f1" alt="ngrok Forwarding URL" width="500" />
+<img src="https://github.com/user-attachments/assets/e309927e-16ea-4542-84c4-986bcd89a346" alt="ngrok Forwarding URL" width="500" />
 
 * 前往 LINE Developers → Channel → **Webhook settings**，貼上：
 
@@ -138,7 +138,7 @@ ngrok http 5000
   * 點擊「**Verify**」驗證 Webhook，若成功表示 LINE 可正確呼叫你的伺服器。
 
 <img src="https://github.com/user-attachments/assets/66d820a5-1ce1-4254-8377-70d1bc40968a" alt="Webhook settings 畫面" width="500" />
-<img src="https://github.com/user-attachments/assets/6d35d74e-a4a7-4100-80ca-9e5a36e30f47" alt="Webhook 驗證成功畫面" width="500" />
+<img src="https://github.com/user-attachments/assets/79679946-afe0-44c6-969a-628ef474cd2b" alt="Webhook 驗證成功畫面" width="500" />
 
 ---
 
