@@ -33,10 +33,6 @@
    ngrok config add-authtoken <你的Authtoken>
 ````
 
-<img width="1878" height="868" alt="image" src="https://github.com/user-attachments/assets/92887b4f-b730-4496-981f-ef3b762f851a" />
-
-
-
 
 ### 3. 建立 LINE Messaging API Channel
 
@@ -131,6 +127,10 @@ ngrok http 5000
 
 * 結尾需加 `/callback`
 * 點擊「**Verify**」驗證 Webhook，若顯示成功，表示 LINE 已能正確呼叫你的伺服器。
+
+## 安裝成功
+<img width="870" height="1514" alt="image" src="https://github.com/user-attachments/assets/f1acbc55-82ba-498c-a6d5-631a959358b8" />
+
 
 ---
 
