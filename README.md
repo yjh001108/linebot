@@ -198,6 +198,17 @@ ngrok http 5000
 
 
 
+當然可以！以下是我特別整理的 Markdown 版本，會更確保圖片能正確顯示。重點在於：
+
+* 使用相對或絕對可靠的圖片路徑／網址
+* 避免出錯的 **重複反引號** 或搞錯的 Markdown 語法
+* 清楚、工整的標題與段落格式
+
+你可以直接複製貼上使用。如果有特定需求（如想使用本地圖片或變更尺寸），也可以告訴我，我再幫你調整。
+
+---
+
+````markdown
 # LINE Bot 記帳 — 建立教學（Windows / PowerShell）
 
 > 🎯 **目標**：建立一個簡單方便的 LINE Bot 記帳工具，支援 Excel 即時匯出，適合初學者快速上手。
@@ -206,13 +217,13 @@ ngrok http 5000
 
 ## 📁 一、檔案說明
 
-| 檔案              | 說明                                                              |
-|-------------------|-------------------------------------------------------------------|
-| `app.py`          | 主程式（包含 DB 初始化、migration、指令解析、CSV 匯出）          |
-| `requirements.txt`| Python 套件需求清單                                               |
-| `.env`            | 環境變數檔案                                                      |
-| `bookkeeping.db`  | SQLite 資料庫（程式啟動時自動建立與更新）                         |
-| `records.csv`     | 匯出用 CSV 檔（由 `儲存` 指令建立/覆蓋）                           |
+| 檔案               | 說明                                             |
+|--------------------|--------------------------------------------------|
+| `app.py`           | 主程式（包含 DB 初始化、migration、指令解析、CSV 匯出） |
+| `requirements.txt` | Python 套件需求清單                              |
+| `.env`             | 環境變數檔案                                     |
+| `bookkeeping.db`   | SQLite 資料庫（程式啟動時自動建立與更新）        |
+| `records.csv`      | 匯出用 CSV 檔（由 `儲存` 指令建立/覆蓋）         |
 
 ---
 
@@ -223,7 +234,9 @@ ngrok http 5000
 - 前往 [Python 官網下載頁面](https://www.python.org/downloads/)，下載 **Python 3.8 或以上版本**。
 - 安裝時請勾選 **「Add Python to PATH」**。
 
-<img src="https://github.com/user-attachments/assets/1e0dc982-9ea5-4255-9dc7-4fe8160b09b3" alt="Python 安裝畫面" width="500"/>
+```markdown
+<img src="https://github.com/user-attachments/assets/1e0dc982-9ea5-4255-9dc7-4fe8160b09b3" alt="Python 安裝畫面" width="500" />
+````
 
 ---
 
@@ -234,12 +247,14 @@ ngrok http 5000
 3. 登入 ngrok 官網 → 點選 Dashboard → 複製你的 **Authtoken**。
 4. 在 PowerShell 輸入以下指令來設定：
 
-   ```powershell
-   ngrok config add-authtoken <你的Authtoken>
-````
+```powershell
+ngrok config add-authtoken <你的Authtoken>
+```
 
-<img src="https://github.com/user-attachments/assets/18be64f9-59fd-4b25-bf72-50646adc4da1" alt="ngrok 畫面" width="500"/>
-<img src="https://github.com/user-attachments/assets/e3ccc1cc-b4cd-4a74-8954-b20ebc209ad2" alt="ngrok 畫面" width="500"/>
+```markdown
+<img src="https://github.com/user-attachments/assets/18be64f9-59fd-4b25-bf72-50646adc4da1" alt="ngrok Authtoken 設定" width="500" />
+<img src="https://github.com/user-attachments/assets/e3ccc1cc-b4cd-4a74-8954-b20ebc209ad2" alt="ngrok Authtoken 完成" width="500" />
+```
 
 ---
 
@@ -248,18 +263,20 @@ ngrok http 5000
 1. 前往 [LINE Developers](https://developers.line.biz/)。
 2. 使用 LINE 帳號登入。
 3. 建立一個 **Provider**（提供者，隨便填寫一個名稱即可）。
-4. 在該 Provider 下，建立 **Messaging API Channel**。
+4. 在該 Provider 下，建立 **Messaging API Channel**：
 
    * App 名稱：隨意（例如「記帳小幫手」）
    * App Icon：可上傳任意圖片
    * 類型：Messaging API
    * Email：填寫有效 Email
-5. 建立完成後，進入 Channel 頁面 → 複製：
+5. 建立完成後，進入 Channel 頁面 → 複製以下資訊：
 
    * **Channel Secret**
    * **Channel Access Token**（點選「發行」）
 
-<img src="https://github.com/user-attachments/assets/5ca4b91f-3f17-417e-ad12-0da55e2f2018" alt="LINE Developers 設定" width="500"/>
+```markdown
+<img src="https://github.com/user-attachments/assets/5ca4b91f-3f17-417e-ad12-0da55e2f2018" alt="LINE Developers Channel 設定畫面" width="500" />
+```
 
 ---
 
@@ -267,7 +284,7 @@ ngrok http 5000
 
 將專案下載並解壓縮至本機資料夾，例如：
 
-```
+```text
 C:\projects\linebot
 ```
 
@@ -287,9 +304,9 @@ pip install -r requirements.txt
 
 ## 🛠️ 五、建立 `.env` 檔案
 
-根據 `.env.example`，填入你的 LINE Channel Secret 與 Access Token，例如：
+請依照 `.env.example` 填入你的 LINE Channel Secret 與 Access Token：
 
-```
+```text
 CHANNEL_SECRET=xxxxxxxxxxxxxxxx
 CHANNEL_ACCESS_TOKEN=xxxxxxxxxxxxxxxx
 ```
@@ -318,33 +335,38 @@ python app.py
 ngrok http 5000
 ```
 
-* 找到輸出中的 Forwarding URL，例如：
+* 找到命令輸出中的 Forwarding URL，例如：
 
-  ```
+  ```text
   https://xxxx.ngrok-free.app
   ```
 
-<img src="https://github.com/user-attachments/assets/40aa0e60-bfd6-401d-92fc-208ddc0976f1" alt="ngrok forwarding" width="500"/>
+```markdown
+<img src="https://github.com/user-attachments/assets/40aa0e60-bfd6-401d-92fc-208ddc0976f1" alt="ngrok Forwarding URL" width="500" />
+```
 
-* 前往 LINE Developers > Channel > **Webhook settings**，貼上：
+* 前往 LINE Developers → Channel → **Webhook settings**，貼上：
 
-  ```
+  ```text
   https://xxxx.ngrok-free.app/callback
   ```
 
-* 結尾需加 `/callback`
+  * URL 結尾需加上 `/callback`
+  * 點擊「**Verify**」驗證 Webhook，若成功表示 LINE 可正確呼叫你的伺服器。
 
-* 點擊「**Verify**」驗證 Webhook，若顯示成功，表示 LINE 已能正確呼叫你的伺服器。
-
-<img src="https://github.com/user-attachments/assets/66d820a5-1ce1-4254-8377-70d1bc40968a" alt="Webhook 設定" width="500"/>
-<img src="https://github.com/user-attachments/assets/6d35d74e-a4a7-4100-80ca-9e5a36e30f47" alt="Webhook 驗證成功" width="500"/>
+```markdown
+<img src="https://github.com/user-attachments/assets/66d820a5-1ce1-4254-8377-70d1bc40968a" alt="Webhook settings 畫面" width="500" />
+<img src="https://github.com/user-attachments/assets/6d35d74e-a4a7-4100-80ca-9e5a36e30f47" alt="Webhook 驗證成功畫面" width="500" />
+```
 
 ---
 
-## ✅ 安裝成功畫面
+## ✅ 安裝成功後畫面
 
-<img src="https://github.com/user-attachments/assets/8fcd3147-3892-46a6-8176-8926f62f503e" alt="完成畫面 1" width="200"/>
-<img src="https://github.com/user-attachments/assets/6630a375-d135-4f10-a4c2-68f0d4871660" alt="完成畫面 2" width="500"/>
+```markdown
+<img src="https://github.com/user-attachments/assets/8fcd3147-3892-46a6-8176-8926f62f503e" alt="安裝成功畫面 1" width="200" />
+<img src="https://github.com/user-attachments/assets/6630a375-d135-4f10-a4c2-68f0d4871660" alt="安裝成功畫面 2" width="500" />
+```
 
 ---
 
@@ -354,16 +376,16 @@ ngrok http 5000
 
 1. 傳送以下格式的訊息給你的 Bot：
 
-| 指令            | 說明                                     |
-| ------------- | -------------------------------------- |
-| `品項 種類 價錢 備註` | 新增一筆記帳資料（會自動加上今天日期），例如：`午餐 食物 120 跟朋友` |
-| `清單`          | 顯示最近 10 筆紀錄                            |
-| `0902`        | 顯示 9 月 2 號的紀錄（格式為 MMDD）                |
-| `今日`          | 顯示今天所有紀錄                               |
-| `本月`          | 顯示本月所有紀錄                               |
-| `儲存`          | 更新 `records.csv` 檔案，可用 Excel 開啟        |
+| 指令            | 說明                                    |
+| ------------- | ------------------------------------- |
+| `品項 種類 價錢 備註` | 新增一筆記帳資料（自動加上今天日期），例如：`午餐 食物 120 跟朋友` |
+| `清單`          | 顯示最近 10 筆記錄                           |
+| `0902`        | 顯示 9 月 2 號的紀錄（格式為 MMDD）               |
+| `今日`          | 顯示今天所有紀錄                              |
+| `本月`          | 顯示本月所有紀錄                              |
+| `儲存`          | 更新 `records.csv` 檔案（可用 Excel 開啟瀏覽）    |
 
-2. 開啟 `records.csv`（用 Excel 查看），即可看到所有紀錄。
+2. 開啟 `records.csv`（用 Excel 查看），即可看到所有記錄。
 
 ---
 
@@ -383,19 +405,19 @@ python app.py
 ngrok http 5000
 ```
 
-> 📌 若 ngrok 網址改變，請回到 LINE Developers 更新 Webhook URL（結尾需加 `/callback`）
+> 若 ngrok 網址改變，請回到 LINE Developers 更新 Webhook URL（結尾需加 `/callback`）
 
 ---
 
 ## ❓ 十一、常見問題與排除法 (FAQ)
 
-| 問題                                                   | 解決方法                                              |
-| ---------------------------------------------------- | ------------------------------------------------- |
-| `502 Bad Gateway`（ngrok 顯示）                          | 確認 `python app.py` 是否有在執行。未啟動時 ngrok 會回傳 502。     |
-| Webhook 驗證失敗 / HTTP 400                              | 檢查 `.env` 的 Channel Secret / Access Token 是否填寫正確。 |
-| 匯出的 `records.csv` 為空                                 | 代表資料庫尚無資料。可先輸入一筆記帳指令測試。                           |
-| 出現錯誤 `table records has no column named record_date` | 使用新版 `app.py`，會自動處理 migration 並新增缺少欄位。不必手動刪除 DB。  |
+| 問題                                                   | 解決方法                                               |
+| ---------------------------------------------------- | -------------------------------------------------- |
+| `502 Bad Gateway`（ngrok 顯示）                          | 確認 `python app.py` 是否有在執行—未啟動時 ngrok 會回傳 502。      |
+| Webhook 驗證失敗 / HTTP 400                              | 檢查 `.env` 中的 Channel Secret / Access Token 是否填寫正確。 |
+| 匯出的 `records.csv` 為空                                 | 代表資料庫尚無資料，可先輸入一筆記帳指令測試。                            |
+| 出現錯誤 `table records has no column named record_date` | 使用新版 `app.py` 會自動處理 migration，無需手動刪除資料庫。           |
 
 ---
 
-
+````
