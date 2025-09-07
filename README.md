@@ -1,4 +1,4 @@
-# LINE Bot 記帳 — 建立教學（Windows）
+# LINE Bot 記帳 — 建立教學
 
 > 🎯 **目標**：建立一個簡單方便的 LINE Bot 記帳工具，支援 Excel 即時匯出，適合初學者快速上手。
 
@@ -8,11 +8,11 @@
 
 | 檔案               | 說明                                             |
 |--------------------|--------------------------------------------------|
-| `app.py`           | 主程式（包含 DB 初始化、migration、指令解析、CSV 匯出） |
-| `requirements.txt` | Python 套件需求清單                              |
-| `.env`             | 環境變數檔案                                     |
-| `bookkeeping.db`   | SQLite 資料庫（程式啟動時自動建立與更新）        |
-| `records.csv`      | 匯出用 CSV 檔（由 `儲存` 指令建立/覆蓋）         |
+| `app.py`           | 主程式（Flask），處理 LINE webhook 與記帳指令       |
+| `requirements.txt` | Python 套件清單                                  |
+| `.env.example`     | 範例環境變數檔，請複製為 並填入你的憑證。.env       |
+| `utils.py      `   | 處理 CSV 與記錄的輔助函式                         |
+| `records.db`       | 本地範例 sqlite 檔（專案啟動後會建立）             |
 
 ---
 
@@ -56,8 +56,8 @@ ngrok config add-authtoken <你的Authtoken>
    * Email：填寫有效 Email
 5. 建立完成後，進入 Channel 頁面 → 複製以下資訊：
 
-   * Channel Secret
-   * Channel Access Token（點選「發行」）
+   * Channel Secret (在 Basic settings )
+   * Channel Access Token（在Messaging API ，點選「發行」）
 
 <img src="https://github.com/user-attachments/assets/2f0a364a-d8e2-45e0-8498-3c3de23cef05" alt="LINE Developers Channel 設定畫面" width="500" />
 <img src="https://github.com/user-attachments/assets/c83269e3-a574-4746-956b-283f0270fe91" alt="LINE Developers Channel 設定畫面" width="500" />
@@ -80,7 +80,7 @@ C:\projects\linebot
 ```powershell
 cd C:\projects\linebot
 python -m venv venv
-.\venv\Scripts\Activate.ps1
+.\venv\Scripts\activate
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
@@ -92,21 +92,13 @@ pip install -r requirements.txt
 請依照 `.env.example` 填入你的 LINE Channel Secret 與 Access Token：
 
 ```text
-CHANNEL_SECRET=xxxxxxxxxxxxxxxx
-CHANNEL_ACCESS_TOKEN=xxxxxxxxxxxxxxxx
+LINE CHANNEL_SECRET=xxxxxxxxxxxxxxxx
+LINE CHANNEL_ACCESS_TOKEN=xxxxxxxxxxxxxxxx
 ```
 
 ---
 
-## 🗃️ 六、初始化資料庫
-
-```powershell
-python init_db.py
-```
-
----
-
-## 🚀 七、啟動主程式（會自動建立 DB 並做 migration）
+## 🚀 六、啟動主程式（ Flask 伺服器： 預設會在 http://127.0.0.1:5000 運行）
 
 ```powershell
 python app.py
@@ -114,7 +106,7 @@ python app.py
 
 ---
 
-## 🌐 八、使用 ngrok 暴露本地服務至外網（**另開一個 PowerShell 視窗**）
+## 🌐 七、使用 ngrok 暴露本地服務至外網（**另開一個 PowerShell 視窗**）
 
 ```powershell
 ngrok http 5000
@@ -148,7 +140,7 @@ ngrok http 5000
 
 ---
 
-## 💬 九、測試指令（在 LINE 傳訊給你的 Bot）
+## 💬 八、測試指令（在 LINE 傳訊給你的 Bot）
 
 ### 使用方式：
 
@@ -156,12 +148,13 @@ ngrok http 5000
 
 | 指令            | 說明                                    |
 | ------------- | ------------------------------------- |
-| `品項 種類 價錢 備註` | 新增一筆記帳資料（自動加上今天日期），例如：`午餐 食物 120 跟朋友` |
-| `清單`          | 顯示最近 10 筆記錄                           |
-| `0902`        | 顯示 9 月 2 號的紀錄（格式為 MMDD）               |
-| `今日`          | 顯示今天所有紀錄                              |
-| `本月`          | 顯示本月所有紀錄                              |
-| `儲存`          | 更新 `records.csv` 檔案（可用 Excel 開啟瀏覽）    |
+| `品項 種類 價錢` | 新增一筆記帳資料（自動加上今天日期），例如：`午餐 食物 120` |
+| `清單`          | 顯示最近 10 筆記錄                                      |
+| `MMDD`          | 指定日期（例如 0902，顯示 9 月 2 號的紀錄）              |
+| `今日`          | 顯示今天所有紀錄                                        |
+| `本月`          | 顯示本月所有紀錄                                        |
+| `儲存`          | 更新 `records.csv` 檔案                                |
+| `刪除`          | 刪除紀錄的所有資料                                      |
 
 2. 開啟 `records.csv`（用 Excel 查看），即可看到所有記錄。
 
@@ -175,7 +168,7 @@ ngrok http 5000
 
 ```powershell
 cd C:\projects\linebot
-.\venv\Scripts\Activate.ps1
+.\venv\Scripts\activate
 python app.py
 ```
 
@@ -193,8 +186,7 @@ ngrok http 5000
 
 | 問題                                                   | 解決方法                                               |
 | ---------------------------------------------------- | -------------------------------------------------- |
-| `502 Bad Gateway`（ngrok 顯示）                          | 確認 `python app.py` 是否有在執行—未啟動時 ngrok 會回傳 502。      |
+| `502 Bad Gateway`（ngrok 顯示）                          | 確認 `python app.py` 是否有在執行—未啟動時 ngrok 會回傳 502。  |
 | Webhook 驗證失敗 / HTTP 400                              | 檢查 `.env` 中的 Channel Secret / Access Token 是否填寫正確。 |
-| 匯出的 `records.csv` 為空                                 | 代表資料庫尚無資料，可先輸入一筆記帳指令測試。                            |
-| 出現錯誤 `table records has no column named record_date` | 使用新版 `app.py` 會自動處理 migration，無需手動刪除資料庫。           |
+| 匯出的 `records.csv` 為空                                 | 代表資料庫尚無資料，可先輸入一筆記帳指令測試。                 |
 
